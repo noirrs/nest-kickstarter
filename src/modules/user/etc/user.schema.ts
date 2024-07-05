@@ -17,7 +17,7 @@ export class User {
   @Prop({ default: false })
   admin: boolean;
 
-  @Prop({ default: null})
+  @Prop({ default: null })
   photo: string | null;
 
   @Prop({ required: true, unique: true })

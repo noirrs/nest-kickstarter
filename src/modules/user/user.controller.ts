@@ -8,8 +8,7 @@ import { Throttle } from '@nestjs/throttler';
 export class UserController {
   constructor(private readonly service: UserService) {}
 
-
-  @Throttle(7, 10 * 60)
+  @Throttle({ default: {limit: 7, ttl: 10 * 60}})
   @Post('/create')
   async create(@Body() body: RegisterDTO) {
     return await this.service.create(body);

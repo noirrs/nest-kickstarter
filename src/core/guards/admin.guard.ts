@@ -9,7 +9,7 @@ export class AdminGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
     const user = request.user;
 
-    const skip = this.reflector.get('skipAdmin', context.getHandler()); 
+    const skip = this.reflector.get('skipAdmin', context.getHandler());
 
     if (!user.admin) {
       return skip;

@@ -5,6 +5,6 @@ import { ApiController } from './api.controller';
 @Module({
   imports: [],
   controllers: [ApiController],
-  providers: [ApiService]
+  providers: [ApiService],
 })
 export class ApiModule {}

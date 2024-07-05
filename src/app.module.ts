@@ -12,10 +12,12 @@ import { ApiModule } from './modules/api/api.module';
   imports: [
     UserModule,
     ApiModule,
-    ThrottlerModule.forRoot({
-      ttl: CONSTANTS.throttle.ttl,
-      limit: CONSTANTS.throttle.limit,
-    }),
+    ThrottlerModule.forRoot([
+      {
+        ttl: CONSTANTS.throttle.ttl,
+        limit: CONSTANTS.throttle.limit,
+      },
+    ]),
     MongooseModule.forRoot(CONSTANTS.database.connURL, {
       dbName: CONSTANTS.database.dbName,
     }),
